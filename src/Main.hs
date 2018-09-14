@@ -11,4 +11,4 @@ import System.Environment
 main = do
   args <- getArgs
   desc <- readGenericPackageDescription normal (head args)
-  print $ unPackageName $ pkgName $ package $ packageDescription desc
+  print $ (unPackageName . pkgName . package . packageDescription) desc
